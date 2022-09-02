@@ -1,112 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Weather app</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link href="src/style.css" rel="stylesheet" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Moonrocks&display=swap"
-      rel="stylesheet"
-    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather App</title>
   </head>
+
   <body>
     <div class="container">
-      <ul class="list-group list-group-horizontal" id="top-search">
-        <li class="list-group-item" id="current-location">Current location</li>
-        <li class="list-group-item" id="more">More</li>
-      </ul>
-      <form>
-        <div class="input-group mb-3">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Search a city..."
-            aria-label="city"
-            aria-describedby="button-addon2"
-          />
-          <button type="submit" class="btn btn-outline-light" id="search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-        </div>
-      </form>
-
-      <div class="row">
-        <div class="col-md-3">
-          <h1 class="cityname">Liepāja</h1>
-          <h1 id="date"></h1>
-          <div class="day-one">
-            <div class="now-emoji">⛅</div>
-            <h2 class="now-temp">29°C</h2>
+      <div class="weather-app">
+        <form class="search-form" id="search-form">
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="search"
+                placeholder="Type a city.."
+                autofocus="on"
+                autocomplete="off"
+                id="city-input"
+                class="form-control shadow-sm"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm w-100"
+              />
+            </div>
+            <div class="col-3">
+              <button
+                class="btn btn-success w-100"
+                id="current-location-button"
+              >
+                Current
+              </button>
+            </div>
           </div>
-        </div>
-
-        <div class="col-md-2">
-          <div class="day-two">
-            <div class="week-emoji">🌧️</div>
-            <div class="week-temp">27°C</div>
+        </form>
+        <h1 id="city"></h1>
+        <ul>
+          <li id="date"></li>
+          <li id="description"></li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <div class="clearfix">
+              <div class="float-left">
+                <span class="temperature" id="temperature"></span
+                ><span class="units">°C</span>
+              </div>
+            </div>
           </div>
-          <div class="day-three">
-            <div class="week-emoji">⛈️</div>
-            <div class="week-temp">30°C</div>
+          <div class="col-6">
+            <ul>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
+            </ul>
           </div>
-        </div>
-        <div class="col-md-2">
-          <div class="day-four">
-            <div class="week-emoji">🌧️</div>
-            <div class="week-temp">24°C</div>
-          </div>
-          <div class="day-five">
-            <div class="week-emoji">🌤️</div>
-            <div class="week-temp">23°C</div>
-          </div>
-        </div>
-        <div class="col-md-2">
-          <div class="day-six">
-            <div class="week-emoji">🌧️</div>
-            <div class="week-temp">23°C</div>
-          </div>
-          <div class="day-seven">
-            <div class="week-emoji">🌧️</div>
-            <div class="week-temp">21°C</div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <ul class="list-group">
-            <li class="list-group-item" id="monday">Monday</li>
-            <li class="list-group-item" id="tuesday">Tuesday</li>
-            <li class="list-group-item" id="wednesday">Wednesday</li>
-            <li class="list-group-item" id="thursday">Thursday</li>
-            <li class="list-group-item" id="friday">Friday</li>
-            <li class="list-group-item" id="saturday">Saturday</li>
-            <li class="list-group-item" id="sunday">Sunday</li>
-          </ul>
         </div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
     <script src="src/index.js"></script>
-    <script
-      src="https://kit.fontawesome.com/a1b91a048f.js"
-      crossorigin="anonymous"
-    ></script>
-    <div class="footer">
-      <p><span id="source"><a href="">Open source code</a></span>
-      </br>
-      by Viktorija Puka</p>
-    </div>
   </body>
 </html>
