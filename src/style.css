@@ -1,0 +1,185 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  display: block;
+  background-color: #76d1cb;
+  position: fixed;
+  margin: 20px 200px;
+  max-width: 75%;
+  padding: 0 30px 20px;
+}
+#current-location {
+  background-color: #76d1cb;
+  color: #fff;
+}
+#current-location:hover {
+  cursor: pointer;
+  background-color: #6799cb;
+  color: #fff;
+  transition: all ease-in-out 200ms;
+}
+#more {
+  background-color: #76d1cb;
+  color: #fff;
+}
+#more:hover {
+  cursor: pointer;
+  background-color: #6799cb;
+  color: #fff;
+  transition: all ease-in-out 200ms;
+}
+#top-search {
+  margin: 10px 0;
+}
+#search {
+  background-color: #6799cb;
+}
+#search:hover {
+  opacity: 80%;
+  transition: all ease-in-out 200ms;
+}
+.cityname {
+  margin: 20px 60px 10px;
+  color: #fff;
+  font-weight: bold;
+}
+.now-emoji {
+  font-size: 140px;
+  margin: 0 30px;
+}
+.now-temp {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0 70px 30px;
+}
+.week-emoji {
+  font-size: 90px;
+  margin: 0 20px;
+}
+.week-temp {
+  color: #fff;
+  font-weight: bold;
+  margin: 0 50px 15px;
+  font-size: 25px;
+}
+.day-one:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+.day-two:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+.day-three:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+.day-four:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+.day-five:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+.day-six:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+.day-seven:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+.list-group {
+  font-size: 22px;
+  font-weight: bold;
+}
+#monday {
+  background-color: #76d1cb;
+  color: #fff;
+}
+#monday:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+#tuesday {
+  background-color: #76d1cb;
+  color: #fff;
+}
+#tuesday:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+#wednesday {
+  background-color: #76d1cb;
+  color: #fff;
+}
+#wednesday:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+#thursday {
+  background-color: #76d1cb;
+  color: #fff;
+}
+#thursday:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+#friday {
+  background-color: #76d1cb;
+  color: #fff;
+}
+#friday:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+#saturday {
+  background-color: #76d1cb;
+  color: #fff;
+}
+#saturday:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+#sunday {
+  background-color: #76d1cb;
+  color: #fff;
+}
+#sunday:hover {
+  cursor: pointer;
+  background-color: #1ab2a8;
+  transition: all ease-in-out 200ms;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 94%;
+  width: 100%;
+  background-color: rgb(226, 225, 225);
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  padding: 0;
+}
+#source:hover {
+  cursor: pointer;
+  color: #76d1cb;
+  text-decoration: underline;
+}
